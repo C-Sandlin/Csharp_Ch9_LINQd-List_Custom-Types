@@ -53,6 +53,19 @@ namespace LINQd_List_custom_types
             {
                 Console.WriteLine($"The Bank {taco.Bank} has {taco.numMillionaires} millionaires.");
             };
+
+            // ORRRRR
+
+            var millionaires2 = from customer in customers
+                                where customer.Balance >= 1000000.00
+                                select customer;
+            var banksGroup = from millionaire2 in millionaires2
+                             group millionaire2 by millionaire2.Bank into newGroup
+                             select new { Bank = newGroup.Key, Customers = newGroup.ToList() };
+            banksGroup.ToList().ForEach(bank =>
+            {
+                Console.WriteLine($"{bank.Bank} - {bank.Customers.Count}");
+            });
         }
     }
 }

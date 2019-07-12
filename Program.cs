@@ -9,6 +9,18 @@ namespace LINQd_List_custom_types
     {
         public static void Main()
         {
+
+            //REFERENCE EXAMPLE
+            // persons[0] = new Person { PersonID = 1, car = "Ferrari" };
+            // persons[1] = new Person { PersonID = 1, car = "BMW" };
+            // persons[2] = new Person { PersonID = 2, car = "Audi" };
+            // Is there a way I can group by personID and get the list of all the cars he has?
+
+            // var results = from p in persons
+            //               group p.car by p.PersonId into g
+            //               select new { PersonId = g.Key, Cars = g.ToList() };
+
+
             List<Customer> customers = new List<Customer>() {
                 new Customer(){ Name="Bob Lesman", Balance=80345.66, Bank="FTB"},
                 new Customer(){ Name="Joe Landy", Balance=9284756.21, Bank="WF"},
